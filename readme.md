@@ -56,29 +56,22 @@ wslpath -w ~ | sed 's/\\/\\\\/g' | clip.exe
 <br>
 
 ## Powerline Setup
-
+> Using Oh my Posh v3 ([https://ohmyposh.dev/](https://ohmyposh.dev/))
 ### Powershell
 
-Using PowerShell, install Posh-Git and Oh-My-Posh:
+Using PowerShell, install Oh my Posh.
 ```powershell
-Install-Module posh-git -Scope CurrentUser
-Install-Module oh-my-posh -Scope CurrentUser
+Install-Module oh-my-posh -Scope CurrentUser -AllowPrerelease
 ```
 <br>
-
-If you are using PowerShell Core, install PSReadline:
-```powershell
-Install-Module -Name PSReadLine -Scope CurrentUser -Force -SkipPublisherCheck
-```
 
 Open your PowerShell profile with `notepad $PROFILE` or the text editor of your choice. 
 
 In your PowerShell profile, add the following to the end of the file:
 ```powershell
-Import-Module posh-git
-Import-Module oh-my-posh
-Set-PoshPrompt -Theme paradox
+Set-PoshPrompt -Theme PowerLine
 ```
+Save and close it
 
 Set Cascadia Code PL as your font
 ```json
@@ -91,6 +84,10 @@ Set Cascadia Code PL as your font
         ...
     }
 ]
+```
+Reload the profile
+```
+. $profile
 ```
 
 ### WSL Ubuntu
@@ -116,8 +113,22 @@ sudo apt install unzip
 Add the following line to the bottom of your `~/.bashrc`
 
 ```bash
-eval "$(oh-my-posh --init --shell bash --config ~/.poshthemes/jandedobbeleer.omp.json)"
+eval "$(oh-my-posh --init --shell bash --config ~/.poshthemes/powerline.omp.json)"
 ```
+
+Set Cascadia Code PL as your font
+```json
+"profiles": [
+    {
+        ...
+        "name": "PowerShell Core",
+        "source": "Windows.Terminal.PowershellCore",
+        "fontFace": "Cascadia Code PL",
+        ...
+    }
+]
+```
+Restart the terminal
 
 <br>
 <br>
