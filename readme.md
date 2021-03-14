@@ -9,7 +9,7 @@
         ...
         "useAcrylic": true,
         "acrylicOpacity": 0.75,
-        ..
+        ...
     }
 ]
 ```
@@ -130,3 +130,5 @@ eval "$(oh-my-posh --init --shell bash --config ~/.poshthemes/jandedobbeleer.omp
     * https://ohmyposh.dev/docs/themes/
 * Set Windows Terminal to use your user HOME directory
     * https://wsl.tips/tips/windows-terminal-start-directory/
+* Windows Terminal Docs
+    * https://docs.microsoft.com/en-us/windows/terminal/
