@@ -97,6 +97,8 @@ Install oh-my-posh:
 sudo wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/posh-linux-amd64 -O /usr/local/bin/oh-my-posh
 sudo chmod +x /usr/local/bin/oh-my-posh
 ```
+> If you get any SSL errors you can add the following `–no-check-certificate` to the wget call
+
 Get themes
 ```bash
 mkdir ~/.poshthemes
@@ -106,7 +108,7 @@ chmod u+rw ~/.poshthemes/*.json
 rm ~/.poshthemes/themes.zip
 ```
 
-might need to install `unzip`: 
+You might need to install `unzip`: 
 ```bash
 sudo apt install unzip
 ```
@@ -129,6 +131,22 @@ Set Cascadia Code PL as your font
 ]
 ```
 Restart the terminal
+
+<br>
+
+## Default profile
+If you have a bunch of common settings you can leverage the `defaults` node to set them in one place.
+```json
+{
+    "defaults":{
+        "useAcrylic": true,
+        "acrylicOpacity": 0.75,
+        "backgroundImageAlignment": "bottomRight",
+        "backgroundImageStretchMode": "none",
+        "backgroundImageOpacity": 0.34
+    }
+}
+```
 
 <br>
 <br>
